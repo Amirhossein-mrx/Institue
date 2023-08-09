@@ -1,0 +1,13 @@
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\bin\Debug\Institute_WinForm.exe.config
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\bin\Debug\Institute_WinForm.exe
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\bin\Debug\Institute_WinForm.pdb
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\bin\Debug\Newtonsoft.Json.dll
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\bin\Debug\Newtonsoft.Json.xml
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.csproj.AssemblyReference.cache
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.Form1.resources
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.Properties.Resources.resources
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.csproj.GenerateResource.cache
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.csproj.CoreCompileInputs.cache
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.csproj.CopyComplete
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.exe
+E:\Example\WebApiProject\Institute_WinForm\Institute_WinForm\obj\Debug\Institute_WinForm.pdb
