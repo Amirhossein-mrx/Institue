@@ -50,24 +50,24 @@ namespace Institute_WebApi.Controllers
         }
 
         [HttpPost("addnew")]
-        public string add(int studentid, int courseid, string date)
+        public JsonResult add(EnrollmentsViewModel a)
         {
             EnrollmentsViewModel Enroll = new EnrollmentsViewModel()
             {
-
-                StudentId = studentid,
-                CourseId = courseid,
-                Date= date,
+               
+                StudentId = a.StudentId,
+                CourseId = a.CourseId,
+                Date= a.Date,
             };
 
             bool issuccss = _Enrollments.Insert(Enroll);
             if (issuccss)
             {
-                return "successful";
+                return new JsonResult("successful");
             }
             else
             {
-                return "Fail";
+                return new JsonResult("Fail");
             }
         }
 

@@ -24,9 +24,13 @@ namespace Institute_WebApi.Controllers
             _Instructors = new InstructorsService();
         }
 
-        [HttpGet("getcourse")]
+        [HttpGet("{id}")]
         public ActionResult GetCourse(int id)
         {
+            //List<CoursDetailViewModel> coursDetails = new List<CoursDetailViewModel>();
+            //coursDetails=_Course.coursDetails(id);
+            //return Ok(coursDetails);
+
 
             CoursViewModel cours = new CoursViewModel();
             cours = _Course.SelectRow(id);
@@ -37,20 +41,27 @@ namespace Institute_WebApi.Controllers
 
             List<EnrollmentsViewModel> enroll = new List<EnrollmentsViewModel>();
             enroll = _Enrollments.enrolldetails(cours.Id);
-            
+
 
             //StudentViewModel student = new StudentViewModel();
             //student = _Student.SelectRow(enroll.StudentId);
 
-
-            CoursDetailViewModel coursDetaicls = new CoursDetailViewModel()
+            if (cours.IsDelete == 0)
             {
-                Cours=cours,
-                //Students=student,
-                Enroll=enroll,
-                Instructor=instructor
-            };
-            return Ok(coursDetaicls);
+                CoursDetailViewModel coursDetaicls = new CoursDetailViewModel()
+                {
+                    Cours = cours,
+                    //Students=student,
+                    Enroll = enroll,
+                    Instructor = instructor
+                };
+                return Ok(coursDetaicls);
+            }
+            else
+            {
+                return Ok("NO Find");
+            }
+
         }
     }
 }

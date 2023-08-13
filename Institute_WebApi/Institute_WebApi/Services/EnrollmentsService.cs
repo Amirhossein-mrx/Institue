@@ -25,7 +25,6 @@ namespace Institute_WebApi
                 Connection.Open();
                 command.ExecuteNonQuery();
                 return true;
-
             }
             catch
             {

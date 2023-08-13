@@ -34,6 +34,7 @@ namespace Institute_WebApi.Controllers
                     Id = Convert.ToInt32(row["Id"]),
                     CoursName = row["CoursName"].ToString(),
                     InstructorsId = Convert.ToInt32(row["InstructorsId"]),
+                    IsDelete = Convert.ToInt32(row["IsDelete"]),
                 };
             }
             return Ok(Cours);
@@ -43,7 +44,16 @@ namespace Institute_WebApi.Controllers
         public ActionResult GetById(int id)
         {
             CoursViewModel Name = _CoursesService.SelectRow(id);
-            return Ok(Name);
+            if (Name.IsDelete == 0)
+            {
+
+                return Ok(Name);
+            }
+            else
+            {
+                return Ok("No Find");
+            }
+
 
         }
 
@@ -55,8 +65,9 @@ namespace Institute_WebApi.Controllers
 
                 CoursName = coursname,
                 InstructorsId = instructorsid,
-                
-               
+                IsDelete=0
+
+
             };
 
             bool issuccss = _CoursesService.Insert(cours);
@@ -85,24 +96,25 @@ namespace Institute_WebApi.Controllers
             }
         }
 
-        [HttpPut("update")]
-        public string Update(int id, string coursname, int instructorsId)
+        [HttpPut("{id}/{coursname}/{instructorsId}")]
+        public ActionResult Update(int id, string coursname, int instructorsId)
         {
             CoursViewModel cours = new CoursViewModel()
             {
                 Id=id,
                 CoursName = coursname,
                 InstructorsId = instructorsId,
+                IsDelete=0
 
             };
             bool issuccss = _CoursesService.Update(cours);
             if (issuccss)
             {
-                return "Successful";
+                return Ok("Successful");
             }
             else
             {
-                return "Fail";
+                return Ok("Fail");
             }
         }
 

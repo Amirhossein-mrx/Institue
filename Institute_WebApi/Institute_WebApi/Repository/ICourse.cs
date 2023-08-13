@@ -11,7 +11,7 @@ namespace Institute_WebApi
 {
      public interface ICourse
     {
-
+        List<CoursDetailViewModel> coursDetails(int id);
         DataTable SelectAll();
         CoursViewModel SelectRow(int courseid);
         bool Insert(CoursViewModel course);

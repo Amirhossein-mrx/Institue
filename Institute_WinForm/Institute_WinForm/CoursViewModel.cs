@@ -10,5 +10,6 @@ namespace Institute_WinForm
         public int Id { get; set; }
         public string CoursName { get; set; }
         public int InstructorsId { get; set; }
+        public int IsDelete { get; set; }
     }
 }

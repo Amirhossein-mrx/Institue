@@ -34,3 +34,6 @@ E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\obj\Debug\net5.0\Inst
 E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\obj\Debug\net5.0\ref\Institute_WebApi.dll
 E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\obj\Debug\net5.0\Institute_WebApi.pdb
 E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\obj\Debug\net5.0\Institute_WebApi.genruntimeconfig.cache
+E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Example\WebApiProject\Institute_WebApi\Institute_WebApi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

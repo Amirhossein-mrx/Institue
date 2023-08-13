@@ -14,52 +14,52 @@ namespace Institute_WebApi
     {
         string connectionString = "Data Source=172.18.176.74\\sana; Initial Catalog=AmirD;Integrated Security=true";
 
-        public bool Delete(int id)
-        {
-            SqlConnection Connection = new SqlConnection(connectionString);
-            try
-            {
-                string query = "Delete From Instructors Where Id=(@Id)";
-                SqlCommand command = new SqlCommand(query, Connection);
-                command.Parameters.AddWithValue("@Id", id);
-                Connection.Open();
-                command.ExecuteNonQuery();
-                return true;
+        //public bool Delete(int id)
+        //{
+        //    SqlConnection Connection = new SqlConnection(connectionString);
+        //    try
+        //    {
+        //        string query = "Delete From Instructors Where Id=(@Id)";
+        //        SqlCommand command = new SqlCommand(query, Connection);
+        //        command.Parameters.AddWithValue("@Id", id);
+        //        Connection.Open();
+        //        command.ExecuteNonQuery();
+        //        return true;
 
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                Connection.Close();
-            }
-        }
+        //    }
+        //    catch
+        //    {
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        Connection.Close();
+        //    }
+        //}
 
-        public bool Insert(InstructorViewModel instructor)
-        {
-            SqlConnection Connection = new SqlConnection(connectionString);
-            try
-            {
-                string query= "Insert Into Instructors (InstructorName) values (@InstructorName)";
-                SqlCommand command = new SqlCommand(query, Connection);
-                command.Parameters.AddWithValue("@InstructorName", instructor.InstructorName);
+        //public bool Insert(InstructorViewModel instructor)
+        //{
+        //    SqlConnection Connection = new SqlConnection(connectionString);
+        //    try
+        //    {
+        //        string query= "Insert Into Instructors (InstructorName) values (@InstructorName)";
+        //        SqlCommand command = new SqlCommand(query, Connection);
+        //        command.Parameters.AddWithValue("@InstructorName", instructor.InstructorName);
 
-                Connection.Open();
-                command.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception)
-            {
+        //        Connection.Open();
+        //        command.ExecuteNonQuery();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return false;
-            }
-            finally
-            {
-                Connection.Close();
-            }
-        }
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        Connection.Close();
+        //    }
+        //}
 
 
         public DataTable SelectAll()
@@ -104,30 +104,32 @@ namespace Institute_WebApi
             
         }
 
-        public bool Update(InstructorViewModel instructor)
-        {
-            SqlConnection Connection = new SqlConnection(connectionString);
-            try
-            {
+        //public bool Update(InstructorViewModel instructor)
+        //{
+        //    SqlConnection Connection = new SqlConnection(connectionString);
+        //    try
+        //    {
            
-                string query = "Update Instructors Set InstructorName=@InstructorNam Where Id=@Id";
-                SqlCommand command = new SqlCommand(query, Connection);
-                command.Parameters.AddWithValue("@InstructorName", instructor.InstructorName);
+        //        string query = "Update Instructors Set InstructorName=@InstructorNam Where Id=@Id";
+        //        SqlCommand command = new SqlCommand(query, Connection);
+        //        command.Parameters.AddWithValue("@InstructorName", instructor.InstructorName);
 
-                command.Parameters.AddWithValue("@Id", instructor.Id);
-                Connection.Open();
-                command.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception)
-            {
+        //        command.Parameters.AddWithValue("@Id", instructor.Id);
+        //        Connection.Open();
+        //        command.ExecuteNonQuery();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return false;
-            }
-            finally
-            {
-                Connection.Close();
-            }
-        }
+        //        return false;
+        //    }
+        //    finally
+        //    {
+        //        Connection.Close();
+        //    }
+        //}
+
+       
     }
 }
