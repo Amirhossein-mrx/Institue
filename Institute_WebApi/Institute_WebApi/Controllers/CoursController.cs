@@ -53,8 +53,6 @@ namespace Institute_WebApi.Controllers
             {
                 return Ok("No Find");
             }
-
-
         }
 
         [HttpPost("addnew")]
@@ -66,8 +64,6 @@ namespace Institute_WebApi.Controllers
                 CoursName = coursname,
                 InstructorsId = instructorsid,
                 IsDelete=0
-
-
             };
 
             bool issuccss = _CoursesService.Insert(cours);
@@ -80,7 +76,6 @@ namespace Institute_WebApi.Controllers
                 return "Fail";
             }
         }
-
 
         [HttpDelete("delete")]
         public string Delete(int id)
