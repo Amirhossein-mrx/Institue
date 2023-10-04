@@ -23,8 +23,22 @@ namespace Institute_WebApi
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:53135",
+                                "http://localhost:4200"
+                            )
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -42,6 +56,7 @@ namespace Institute_WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Institute_WebApi v1"));
             }
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseRouting();
 

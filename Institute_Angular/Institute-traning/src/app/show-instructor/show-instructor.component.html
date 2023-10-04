@@ -1,0 +1,13 @@
+<div class="container">
+
+    <h1 class="mb-4 ">Courses</h1>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="post p-3 mb-2" *ngFor="let instructor of instructors | async">
+                <h2>InstructorName = {{instructor.instructorName}}</h2>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -38,5 +38,23 @@ namespace Institute_WebApi.Controllers
             }
             return Ok(Instructors);
         }
+
+        [HttpPost("addnew")]
+        public Result add(InstructorViewModel2 newStudent)
+        {
+           
+            Result result = new Result();
+            bool issuccss = _InstructorsService.Insert(newStudent);
+            if (issuccss)
+            {
+                result.Message = "Successful";
+                return result;
+            }
+            else
+            {
+                result.Message = "Fail";
+                return result;
+            }
+        }
     }
 }

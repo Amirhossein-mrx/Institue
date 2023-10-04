@@ -12,7 +12,7 @@ namespace Institute_WebApi
 {
      public class CoursesService : ICourse
     {
-        string connectionString = "Data Source=172.18.176.74\\sana; Initial Catalog=AmirD;Integrated Security=true";
+        string connectionString = "Data Source=172.18.176.74\\sana; Initial Catalog=AmirD; Integrated Security=false; User ID=sana;Password=Tot@licd;";
 
 
         public List<CoursDetailViewModel> coursDetails(int id)
@@ -114,7 +114,9 @@ namespace Institute_WebApi
             DataTable dataTable = new DataTable();
             try
             {
-                string query = "select * from Courses";
+                string query = @"select C.Id, C.CoursName,I.InstructorName from Courses as C
+                                join Instructors as I on c.InstructorsId = I.Id
+                                where IsDelete = 0";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, Connection);        
                 adapter.Fill(dataTable);
                 return dataTable;

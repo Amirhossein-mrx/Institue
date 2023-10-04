@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Add Student</h1>
+        <label class="mb-1"> Student Name</label>
+        <input type="text" class="form-control" [(ngModel)]="txtStudentName">
+        <label class="mb-1"> Student Family</label>
+        <input type="text" class="form-control" [(ngModel)]="txtStudentFamily">
+        <button class="btn btn-primary " (click)="SendStudent()" style="margin-top: 20px;margin-bottom: 10px;"> Save
+        </button>
+    </div>
+    <div class="col-xs-12" *ngIf="isAdded">
+        <div class="alert alert-success">
+            <p>Add Success</p>
+        </div>
+    </div>
+</div>
+
+
+<app-show-student></app-show-student>

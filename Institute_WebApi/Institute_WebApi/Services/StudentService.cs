@@ -12,7 +12,7 @@ namespace Institute_WebApi
 {
      public class StudentService : IStudent
     {
-        string connectionString = "Data Source=172.18.176.74\\sana; Initial Catalog=AmirD;Integrated Security=true";
+        string connectionString = "Data Source=172.18.176.74\\sana; Initial Catalog=AmirD; Integrated Security=false; User ID=sana;Password=Tot@licd;";
 
         public bool Delete(int id)
         {

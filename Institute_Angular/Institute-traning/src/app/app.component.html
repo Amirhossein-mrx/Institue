@@ -1,0 +1,20 @@
+<app-navbar (FeatureLoaded)="onFeatureLoaded($event)"></app-navbar>
+
+<div class="row" style="text-align:center">
+  <div class="col-xs-12" *ngIf="pageloaded==='HomePage'">
+    <h1>Wellcome page</h1>
+  </div>
+</div>
+
+<div class="container" *ngIf="pageloaded==='course'">
+  <app-course></app-course>
+</div>
+
+
+<div class="container" *ngIf="pageloaded==='student'">
+  <app-student></app-student>
+</div>
+
+<div class="container" *ngIf="pageloaded==='instructor'">
+  <app-instructor></app-instructor>
+</div>

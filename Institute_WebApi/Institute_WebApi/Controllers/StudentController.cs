@@ -48,25 +48,27 @@ namespace Institute_WebApi.Controllers
         }
 
         [HttpPost("addnew")]
-        public string add(string name, string family)
+        public Result add(StudentViewModel2 newStudent)
         {
             StudentViewModel student = new StudentViewModel()
             {
 
-                Name = name,
-                Family = family,
+                Name = newStudent.Name,
+                Family = newStudent.Family,
 
 
             };
-
+            Result result=new Result();
             bool issuccss = _StudentService.Insert(student);
             if (issuccss)
             {
-                return "successful";
+                result.Message = "Successful";
+                return result;
             }
             else
             {
-                return "Fail";
+                result.Message = "Fail";
+                return result;
             }
         }
 

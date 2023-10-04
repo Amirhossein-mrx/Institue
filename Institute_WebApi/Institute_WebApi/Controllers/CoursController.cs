@@ -24,7 +24,7 @@ namespace Institute_WebApi.Controllers
         {
             DataTable CoursTable = new DataTable();
             CoursTable = _CoursesService.SelectAll();
-            CoursViewModel[] Cours = new CoursViewModel[CoursTable.Rows.Count];
+            CoursViewModel2[] Cours = new CoursViewModel2[CoursTable.Rows.Count];
             for (int i = 0; i < CoursTable.Rows.Count; i++)
             {
                 DataRow row = CoursTable.Rows[i];
@@ -33,8 +33,8 @@ namespace Institute_WebApi.Controllers
                 {
                     Id = Convert.ToInt32(row["Id"]),
                     CoursName = row["CoursName"].ToString(),
-                    InstructorsId = Convert.ToInt32(row["InstructorsId"]),
-                    IsDelete = Convert.ToInt32(row["IsDelete"]),
+                    InstructorName =row["InstructorName"].ToString(),
+                    //IsDelete = Convert.ToInt32(row["IsDelete"]),
                 };
             }
             return Ok(Cours);
@@ -56,24 +56,27 @@ namespace Institute_WebApi.Controllers
         }
 
         [HttpPost("addnew")]
-        public string add( string coursname, int instructorsid)
+        public Result add(CourseAddViewModel couse)
         {
             CoursViewModel cours = new CoursViewModel()
             {
 
-                CoursName = coursname,
-                InstructorsId = instructorsid,
+                CoursName = couse.coursname,
+                InstructorsId = couse.instructorsid,
                 IsDelete=0
             };
 
             bool issuccss = _CoursesService.Insert(cours);
+            Result result=new Result();
             if (issuccss)
             {
-                return "successful";
+                result.Message = "Success";
+                return result;
             }
             else
             {
-                return "Fail";
+                 result.Message = "Fail";
+                 return result;
             }
         }
 
