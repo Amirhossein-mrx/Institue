@@ -16,4 +16,17 @@ export class ShowStudentComponent {
   ngOnInit() {
     this.students = this.service.showStudent();
   }
+
+
+  isDeleted = false;
+  deleteStudent(Id: number) {
+    this.service.deleteStudent({
+      id: Id,
+    }).subscribe(data => {
+      console.log(data);
+      if (data.message === 'Success') {
+        this.isDeleted = true;
+      }
+    });
+  }
 }

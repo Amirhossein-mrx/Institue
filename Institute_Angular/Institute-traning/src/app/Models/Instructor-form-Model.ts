@@ -10,3 +10,7 @@ export interface instructoInterfaceResult {
 export interface instructoInterface {
     instructorName: string;
 }
+
+export interface instructoInterfaceDelete {
+    id: number;
+}

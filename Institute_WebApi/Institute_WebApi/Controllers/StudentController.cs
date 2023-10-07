@@ -73,17 +73,21 @@ namespace Institute_WebApi.Controllers
         }
 
 
-        [HttpDelete("delete")]
-        public string Delete(int id)
+        [HttpDelete("delete/{id}")]
+        public Result Delete(int id)
         {
             bool issuccss = _StudentService.Delete(id);
+            Result result = new Result();
+           
             if (issuccss)
             {
-                return "Successful";
+                result.Message = "Successful";
+                return result;
             }
             else
             {
-                return "Fail";
+                result.Message = "Fail";
+                return result;
             }
         }
 

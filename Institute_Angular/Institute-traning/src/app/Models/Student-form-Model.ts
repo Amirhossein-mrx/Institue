@@ -12,3 +12,8 @@ export interface StudentInterface {
     name: string;
     family: string;
 }
+
+export interface StudentInterfaceDelete {
+    id: number;
+}
+

@@ -3,6 +3,9 @@
     <div class="row">
         <div class="col-12">
             <div class="post p-3 mb-2" *ngFor="let student of students | async">
+                <div class="delete-btn">
+                    <button class="btn btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+                </div>
                 <h2>Name = {{student.name}}</h2>
                 <p> Family = {{student.family}}</p>
             </div>

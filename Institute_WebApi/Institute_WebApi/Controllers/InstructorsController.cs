@@ -56,5 +56,24 @@ namespace Institute_WebApi.Controllers
                 return result;
             }
         }
+
+
+
+        [HttpDelete("delete/{id}")]
+        public Result Delete(int id)
+        {
+            bool issuccss = _InstructorsService.Delete(id);
+            Result result = new Result();
+            if (issuccss)
+            {
+                result.Message = "Success";
+                return result;
+            }
+            else
+            {
+                result.Message = "Fail";
+                return result;
+            }
+        }
     }
 }

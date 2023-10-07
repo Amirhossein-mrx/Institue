@@ -12,7 +12,19 @@ export class ShowCourseComponent {
   constructor(private service: CourseService) { }
 
   courses?: Observable<CourseInterShows[]>;
+
   ngOnInit(): void {
     this.courses = this.service.showCourses();
+  }
+  isDeleted = false;
+  deleteCourse(Id: number) {
+    this.service.deleteCourse({
+      id: Id,
+    }).subscribe(data => {
+      console.log(data);
+      if (data.message === 'Success') {
+        this.isDeleted = true;
+      }
+    });
   }
 }

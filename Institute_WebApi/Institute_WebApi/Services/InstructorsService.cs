@@ -15,28 +15,28 @@ namespace Institute_WebApi
         string connectionString = "Data Source = 172.18.176.74\\sana; Initial Catalog = AmirD; Integrated Security = false; User ID = sana; Password=Tot@licd;";
 
 
-        //public bool Delete(int id)
-        //{
-        //    SqlConnection Connection = new SqlConnection(connectionString);
-        //    try
-        //    {
-        //        string query = "Delete From Instructors Where Id=(@Id)";
-        //        SqlCommand command = new SqlCommand(query, Connection);
-        //        command.Parameters.AddWithValue("@Id", id);
-        //        Connection.Open();
-        //        command.ExecuteNonQuery();
-        //        return true;
+        public bool Delete(int id)
+        {
+            SqlConnection Connection = new SqlConnection(connectionString);
+            try
+            {
+                string query = "Delete From Instructors Where Id=(@Id)";
+                SqlCommand command = new SqlCommand(query, Connection);
+                command.Parameters.AddWithValue("@Id", id);
+                Connection.Open();
+                command.ExecuteNonQuery();
+                return true;
 
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //    finally
-        //    {
-        //        Connection.Close();
-        //    }
-        //}
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
 
         public bool Insert(InstructorViewModel2 instructor)
         {

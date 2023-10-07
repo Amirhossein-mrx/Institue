@@ -12,3 +12,8 @@ export interface CourseInterShows {
     coursName: string;
     instructorName: string;
 }
+
+
+export interface CourseInterfaceDelete {
+    id: number;
+}

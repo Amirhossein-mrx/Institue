@@ -17,7 +17,17 @@ export class ShowInstructorComponent {
   ngOnInit(): void {
 
     this.instructors = this.service.showInstructor();
+  }
 
-
+  isDeleted = false;
+  deleteInstructor(Id: number) {
+    this.service.deleteInstructor({
+      id: Id,
+    }).subscribe(data => {
+      console.log(data);
+      if (data.message === 'Success') {
+        this.isDeleted = true;
+      }
+    });
   }
 }

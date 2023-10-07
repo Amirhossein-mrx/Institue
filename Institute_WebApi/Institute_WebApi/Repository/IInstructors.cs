@@ -6,7 +6,7 @@ namespace Institute_WebApi
 {
     public interface IInstructors
     {
-        //bool Delete(int id);
+        bool Delete(int id);
         bool Insert(InstructorViewModel2 instructor);
         DataTable SelectAll();
         InstructorViewModel SelectRow(int instructorid);

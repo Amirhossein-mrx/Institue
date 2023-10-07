@@ -1,3 +1,9 @@
 .container {
     padding-top: 20px;
 }
+
+.delete-btn {
+    float: right;
+    margin-right: 10px;
+
+}
